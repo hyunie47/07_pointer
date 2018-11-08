@@ -1,19 +1,21 @@
 #include <stdio.h>
 
+void swap(int *a, int *b)
+{
+	int temp;
+	
+	temp=*a;
+	*a=*b;
+	*b=temp;
+	
+	return;
+}
+	
 int main(int argc, char *argv[]) {
-	int grade[5] = {10, 20, 30, 40, 50};
-	int average=0;
-	int *ptr;
+	int x=40, y=60;
 	
-	int i;
-	
-	ptr = grade; //pointer settings
-	for (i=0;i<5;i++) //average calculation
-	{
-		average += ptr[i];
-	}
-	
-	printf("average : %i\n", average);
+	swap(&x, &y);
+	printf("x, y : %i, %i\n", x, y);
 	
 	return 0;
 }
